@@ -5,10 +5,10 @@ import { Car, Plus, Upload, Image as ImageIcon, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function MintSection({ addCar }) {
-  const [formData, setFormData] = useState({ name: '', year: '', price: '' });
+  const [formData, setFormData] = useState({ name: '', model: '', year: '', price: '' });
   const [image, setImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
-  const [errors, setErrors] = useState({ name: false, year: false, price: false, image: false });
+  const [errors, setErrors] = useState({ name: false, model: false, year: false, price: false, image: false });
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -22,6 +22,7 @@ export default function MintSection({ addCar }) {
   const validate = () => {
     const newErrors = {
       name: !formData.name,
+      model: !formData.model,
       year: !formData.year,
       price: !formData.price,
       image: !image,
@@ -69,7 +70,21 @@ export default function MintSection({ addCar }) {
                   setFormData({ ...formData, name: e.target.value });
                   if (errors.name) setErrors({ ...errors, name: false });
                 }}
-                className={`w-full bg-white/5 border border-white/20 text-white rounded-lg p-3 placeholder:text-gray-400 ${errors.name ? 'border-red-500' : ''}`}
+                className={`w-full bg-white/5 outline-none border border-white/20 text-white rounded-lg p-3 placeholder:text-gray-400 ${errors.name ? 'border-red-500' : ''}`}
+              />
+            </motion.div>
+
+            <motion.div animate={errors.model ? shake : {}}>
+              <label className="text-white font-medium mb-2 block">Model</label>
+              <input
+                type="text"
+                placeholder="e.g., Model S"
+                value={formData.model}
+                onChange={(e) => {
+                  setFormData({ ...formData, model: e.target.value });
+                  if (errors.model) setErrors({ ...errors, model: false });
+                }}
+                className={`w-full bg-white/5 outline-none border border-white/20 text-white rounded-lg p-3 placeholder:text-gray-400 ${errors.model ? 'border-red-500' : ''}`}
               />
             </motion.div>
 
@@ -83,7 +98,7 @@ export default function MintSection({ addCar }) {
                   setFormData({ ...formData, year: e.target.value });
                   if (errors.year) setErrors({ ...errors, year: false });
                 }}
-                className={`w-full bg-white/5 border border-white/20 text-white rounded-lg p-3 placeholder:text-gray-400 ${errors.year ? 'border-red-500' : ''}`}
+                className={`w-full bg-white/5 border outline-none border-white/20 text-white rounded-lg p-3 placeholder:text-gray-400 ${errors.year ? 'border-red-500' : ''}`}
               />
             </motion.div>
 
@@ -97,7 +112,7 @@ export default function MintSection({ addCar }) {
                   setFormData({ ...formData, price: e.target.value });
                   if (errors.price) setErrors({ ...errors, price: false });
                 }}
-                className={`w-full bg-white/5 border border-white/20 text-white rounded-lg p-3 placeholder:text-gray-400 ${errors.price ? 'border-red-500' : ''}`}
+                className={`w-full bg-white/5 outline-none border border-white/20 text-white rounded-lg p-3 placeholder:text-gray-400 ${errors.price ? 'border-red-500' : ''}`}
               />
             </motion.div>
 

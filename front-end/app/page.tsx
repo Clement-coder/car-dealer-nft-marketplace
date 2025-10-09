@@ -9,9 +9,9 @@ import WalletSection from './components/WalletSection';
 export default function Home() {
   const [activeSection, setActiveSection] = useState('marketplace');
   const [cars, setCars] = useState([
-    { id: 1, name: 'Tesla Model S', year: 2024, price: 1.5, image: 'https://images.pexels.com/photos/35967/mini-cooper-auto-model-vehicle.jpg?auto=compress&cs=tinysrgb&w=600' },
-    { id: 2, name: 'Porsche 911', year: 2023, price: 2.8, image: 'https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&w=600' },
-    { id: 3, name: 'BMW M4', year: 2024, price: 1.9, image: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=600' },
+    { id: 1, name: 'Tesla Model S', model: 'Model S', year: 2024, price: 1.5, image: 'https://images.pexels.com/photos/35967/mini-cooper-auto-model-vehicle.jpg?auto=compress&cs=tinysrgb&w=600' },
+    { id: 2, name: 'Porsche 911', model: '911', year: 2023, price: 2.8, image: 'https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&w=600' },
+    { id: 3, name: 'BMW M4', model: 'M4', year: 2024, price: 1.9, image: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=600' },
   ]);
 
   const addCar = (car) => {
