@@ -9,7 +9,7 @@ import "./libs/Events.sol";
 
 contract CarDealer is ERC721, ERC721URIStorage, Ownable {
     uint256 private _tokenIdCounter;
-    uint256 public marketplaceFeePercent = 2; // 2% fee
+    uint256 public marketplaceFeePercent = 2; 
     uint256 public totalFeesCollected;
 
     struct Car {

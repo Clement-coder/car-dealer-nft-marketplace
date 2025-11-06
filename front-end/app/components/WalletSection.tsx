@@ -37,7 +37,7 @@ export default function WalletSection() {
               <DollarSign className="h-6 w-6 text-white" />
             </div>
             <div className="flex items-baseline space-x-2 mb-6">
-              <span className="text-5xl font-bold text-white">5.43</span>
+              <span className="text-5xl font-bold text-white">0.0</span>
               <span className="text-2xl text-white/80">ETH</span>
             </div>
             <button className="w-full bg-white hover:bg-gray-100 text-indigo-600 font-bold py-4 rounded-lg text-lg transition-all transform hover:scale-105 flex items-center justify-center">
